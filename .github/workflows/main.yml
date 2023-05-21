@@ -103,7 +103,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_frontend:latest
 
-  build_gateway_and_push_to_docker_hub:
+  build_nginx_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
     steps:
@@ -119,7 +119,7 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
-          context: ./gateway/
+          context: ./nginx/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/kittygram_nginx:latest
 
@@ -128,7 +128,7 @@ jobs:
     needs: 
       - build_and_push_to_docker_hub
       - build_frontend_and_push_to_docker_hub
-      - build_gateway_and_push_to_docker_hub
+      - build_nginx_and_push_to_docker_hub
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
