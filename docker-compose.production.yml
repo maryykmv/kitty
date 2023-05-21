@@ -24,7 +24,7 @@ services:
     volumes:
       - static:/static
   nginx:
-    image: marykmv/kittygram_nginx
+    image: marykmv/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
