@@ -12,19 +12,20 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: marykmv/kittygram_backend
     env_file: .env
     volumes:
       - static:/static
       - media:/app/media
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: marykmv/kittygram_frontend
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   nginx:
-    build: ./nginx/
+    image: marykmv/kittygram_nginx
+    env_file: .env
     ports:
       - 9000:80
     volumes:
