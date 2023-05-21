@@ -4,8 +4,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY'),
+MEDIA_DOMAIN = os.getenv('MEDIA_DOMAIN')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['158.160.69.26', '127.0.0.1', 'localhost', 'kittygramm.ddns.net']
 
@@ -93,6 +94,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'
+if MEDIA_DOMAIN:
+    MEDIA_URL = MEDIA_DOMAIN + MEDIA_URL
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
