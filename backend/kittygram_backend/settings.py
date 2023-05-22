@@ -5,10 +5,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY'),
 MEDIA_DOMAIN = os.getenv('MEDIA_DOMAIN')
+TYPE_DB = os.getenv('TYPE_DB')
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['158.160.69.26', '127.0.0.1', 'localhost', 'kittygramm.ddns.net']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,6 +62,13 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'rty'),
         'HOST': os.getenv('DB_HOST', ''),
         'PORT': os.getenv('DB_PORT', 5432)
+    }
+}
+if TYPE_DB:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
