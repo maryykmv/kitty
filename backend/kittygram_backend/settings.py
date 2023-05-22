@@ -7,9 +7,9 @@ SECRET_KEY = os.getenv('SECRET_KEY'),
 MEDIA_DOMAIN = os.getenv('MEDIA_DOMAIN')
 TYPE_DB = os.getenv('TYPE_DB')
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
