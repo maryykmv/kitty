@@ -9,7 +9,6 @@ TYPE_DB = os.getenv('TYPE_DB')
 
 DEBUG = os.getenv('DEBUG', False)
 
-# ALLOWED_HOSTS = ['158.160.69.26', '127.0.0.1', 'localhost', 'kittygramm.ddns.net']
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
 
 INSTALLED_APPS = [
