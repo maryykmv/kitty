@@ -3,8 +3,7 @@ name: Main Kittygram workflow
 on:
   push:
     branches:
-      push:
-      pull-request:
+      - main
 
 jobs:
   tests:
@@ -45,12 +44,7 @@ jobs:
         python -m flake8 backend/
         cd backend/
         python manage.py test
-
-on:
-  push:
-    branches:
-      - main
-jobs:      
+    
   build_and_push_to_docker_hub:
     name: Push Docker image to DockerHub
     runs-on: ubuntu-latest
