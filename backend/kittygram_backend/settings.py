@@ -6,7 +6,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY'),
 MEDIA_DOMAIN = os.getenv('MEDIA_DOMAIN')
 TYPE_DB = os.getenv('TYPE_DB')
-# 
 
 DEBUG = os.getenv('DEBUG', False)
 

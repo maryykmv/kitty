@@ -166,6 +166,7 @@ jobs:
 
   send_message:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: deploy
     steps:
     - name: Send message
