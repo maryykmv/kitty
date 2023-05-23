@@ -1,5 +1,5 @@
 # Kittygram
-![workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/wildcat3333/kittygram_final/actions/workflows/main.yml/badge.svg)
 
 URL: https://kittygramm.ddns.net
 IP: 158.160.69.26
