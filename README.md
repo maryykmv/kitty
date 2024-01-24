@@ -1,8 +1,6 @@
 # Kittygram
-![workflow](https://github.com/wildcat3333/kittygram_final/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/maryykmv/kittygram_final/actions/workflows/main.yml/badge.svg)
 
-URL: https://kittygramm.ddns.net
-IP: 158.160.69.26
 
 Проект Kittygram — социальная сеть для обмена фотографиями любимых питомцев. Это полностью рабочий проект, который состоит из бэкенд-приложения на Django и фронтенд-приложения на React.
 Задача — задеплоить проект Kittygram на удалённый сервер.
@@ -21,7 +19,7 @@ ___
 
 
 ## Описание
-Пользователь может получить доступ к проекту Kittygram по доменному имени https://kittygramm.ddns.net
+Пользователь может получить доступ к проекту Kittygram по доменному имени https://YOUR_DOMAIN_NAME
 При подключении к Kittygram доступны все возможности проекта: можно зарегистрироваться и авторизоваться, добавить нового котика на сайт или изменить существующего, а также просмотреть записи других пользователей.
 Секреты подключаются из файла .env.
 В проекте Kittygram подгружаются файлы со стилями для панели администратора.
@@ -31,7 +29,7 @@ ___
 ## Стек технологий
 - проект написан на Python с использованием Django, Django REST Framework
 - базы данны - PostgreSQL
-- система контроля версий - git
+- система контроля версий - Git
 - frontend - React
 
 
@@ -53,8 +51,8 @@ POSTGRES_PASSWORD=<password>
 DB_HOST=db
 DB_PORT=5432
 SECRET_KEY=<sekret key>
-MEDIA_DOMAIN='https://kittygramm.ddns.net'
-ALLOWED_HOSTS='158.160.69.26 127.0.0.1 localhost kittygramm.ddns.net'
+MEDIA_DOMAIN='https://YOUR_DOMAIN_NAME'
+ALLOWED_HOSTS='YOUR_IP 127.0.0.1 localhost YOUR_DOMAIN_NAME'
 DEBUG=False
 
 ```
@@ -78,9 +76,4 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 
 
 ## Автор проекта
-_[Мария Константинова](https://github.com/wildcat3333)_, python-developer
-
-___
-<p>
-    <span>© 2023, Contributors on git </span>
-</p>
+_[Мария Константинова](https://github.com/maryykmv)_, python-developer
